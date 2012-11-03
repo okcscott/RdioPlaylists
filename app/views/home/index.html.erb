@@ -1,0 +1,24 @@
+<div id="loading">
+  <h2>Loading some grooves...</h2>
+</div>
+<!-- <div class="background" style="background-image: url('/home/blur_image/p1156998.png')"> -->
+
+<div class="overlay"></div>
+<div class="title">
+  <h2><%=@playlists.first["name"]%></h2>
+</div>
+<div class="embeds">
+  <iframe src="<%=@playlists.first["iframeUrl"]%>" height="255px" style="border:none;"></iframe>
+</div>
+<div class="backgrounds">
+  <% @playlists.each_with_index do |playlist, index| %>
+    <div class="background <%= index == 0 ? "active" : "" %>" style="background-image: url('/home/blur_image/<%=playlist["key"]%>.png')"></div>
+  <% end %>
+</div>
+<div class="playlists">
+  <% @playlists.each_with_index do |playlist, index| %>    
+    <a href="javascript:void(0);" class="<%= index == 0 ? "active" : "" %>" data-title="<%= playlist["name"] %>" data-url="<%=playlist["iframeUrl"]%> ">
+      <img width="100px" src="<%=playlist["icon"]%>" />
+    </a>
+  <% end %>
+</div>
