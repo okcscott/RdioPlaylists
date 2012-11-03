@@ -17,5 +17,5 @@ $(window).load ->
     $currentBg = $('.backgrounds .background.active')
     $nextBg = $('.backgrounds .background').eq(pos)
 
-    $currentBg.hide()
-    $nextBg.show()
+    $currentBg.hide().removeClass('active')
+    $nextBg.show().addClass('active')
