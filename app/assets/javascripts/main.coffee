@@ -12,6 +12,7 @@ $(window).load ->
     $('.playlists a').removeClass('active')
     $playlist.addClass('active')
     $('.title h2').text($playlist.data('title'))
+    $('.description p').text($playlist.data('description'))
     $('.embeds iframe').attr('src', $playlist.data('url'))
 
     $currentBg = $('.backgrounds .background.active')

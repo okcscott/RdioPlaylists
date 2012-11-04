@@ -112,7 +112,7 @@
 
 .title {
   position: absolute;
-  top: 50px;
+  top: 20px;
   z-index: 210;
   width: 100%;
   text-align: center;
@@ -124,6 +124,27 @@
     display: inline-block;
     padding: 5px 10px;
     background: rgba(0, 0, 0, 0.2);
+    font-family: 'Comfortaa', cursive;
+  }
+}
+
+.description {
+  position: absolute;
+  top: 100px;
+  z-index: 210;
+  width: 100%;
+  text-align: center;
+
+  p {
+    font-size: 18px;
+    margin: 0;
+    color: white;
+    display: inline-block;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.2);
+    font-family: 'Comfortaa', cursive;
+    font-weight: 100;
+    width: 800px;
   }
 }
 

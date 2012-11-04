@@ -7,6 +7,9 @@
 <div class="title">
   <h2><%=@playlists.first["name"]%></h2>
 </div>
+<div class="description">
+  <p><%=@playlists.first["description"]%></p>
+</div>
 <div class="embeds">
   <iframe src="<%=@playlists.first["iframeUrl"]%>" height="255px" style="border:none;"></iframe>
 </div>
@@ -17,7 +20,7 @@
 </div>
 <div class="playlists">
   <% @playlists.each_with_index do |playlist, index| %>    
-    <a href="javascript:void(0);" class="<%= index == 0 ? "active" : "" %>" data-title="<%= playlist["name"] %>" data-url="<%=playlist["iframeUrl"]%> ">
+    <a href="javascript:void(0);" class="<%= index == 0 ? "active" : "" %>" data-title="<%= playlist["name"] %>" data-url="<%=playlist["iframeUrl"]%> " data-description="<%=playlist["description"]%>">
       <img width="100px" src="<%=playlist["icon"]%>" />
     </a>
   <% end %>

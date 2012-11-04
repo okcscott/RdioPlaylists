@@ -10,8 +10,8 @@ class HomeController < ApplicationController
 
   def index
     rdio = Rdio.new([ENV['RDIO_KEY'], ENV['RDIO_SECRET']])
-    scott_playlists = rdio.call("getPlaylists", {"user" => "s1530579", "extras" => "iframeUrl"})
-    brit_playlists = rdio.call("getPlaylists", {"user" => "s1640129", "extras" => "iframeUrl"})
+    scott_playlists = rdio.call("getPlaylists", {"user" => "s1530579", "extras" => "iframeUrl, description"})
+    brit_playlists = rdio.call("getPlaylists", {"user" => "s1640129", "extras" => "iframeUrl, description"})
 
     @playlists = []
 
