@@ -9,7 +9,7 @@ class HomeController < ApplicationController
   RDIO_IDS = %w[s1640129, s1530579] #brit & scott
 
   def index
-    rdio = Rdio.new(["zsy63hyueh3rnqe2b94navet","dancgKCWcK"])
+    rdio = Rdio.new([ENV['RDIO_KEY'], ENV['RDIO_SECRET']])
     scott_playlists = rdio.call("getPlaylists", {"user" => "s1530579", "extras" => "iframeUrl"})
     brit_playlists = rdio.call("getPlaylists", {"user" => "s1640129", "extras" => "iframeUrl"})
 
