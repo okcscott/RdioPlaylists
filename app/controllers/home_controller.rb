@@ -42,39 +42,6 @@ class HomeController < ApplicationController
 
     data = File.open("#{Rails.root}/tmp/#{playlist_id}.png","rb").read
     send_data(data , :filename => "test.png", :type=>"image/png", :disposition => 'inline') and return
-
-    # rdio = Rdio.new(["zsy63hyueh3rnqe2b94navet","dancgKCWcK"])
-    # scott_playlists = rdio.call("getPlaylists", {"user" => "s1530579", "extras" => "iframeUrl"})
-    # brit_playlists = rdio.call("getPlaylists", {"user" => "s1640129", "extras" => "iframeUrl"})
-
-    # @playlists = []
-
-    # scott_playlists["result"]["owned"].each do |playlist|
-    #   if playlist["name"].downcase.include? "and to hold"
-    #     @playlists << playlist
-    #   end
-    # end
-
-    # brit_playlists["result"]["owned"].each do |playlist|
-    #   if playlist["name"].downcase.include? "and to hold"
-    #     @playlists << playlist
-    #   end
-    # end
-    # url = ""
-
-    # @playlists.each do |playlist|
-    #   if playlist["key"] == playlist_id
-    #     url = playlist["icon"].gsub("=200","=1200")
-    #   end
-    # end
-
-    # img = Magick::Image.read(url).first
-
-    # img = img.blur_image(0,4)
-
-    # img.write("#{Rails.root}/tmp/#{playlist_id}.png")
-
-    # send_data(img.blur_image(0,4).to_blob, :disposition => 'inline', :type => 'image/png')
   end
 
 end
